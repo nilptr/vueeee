@@ -1,0 +1,9 @@
+// .babelrc use JSON5, comment is allowed
+{
+    "presets": [
+        // for tree shaking
+        ["@babel/env", { "modules": false, "useBuiltIns": "entry" }]
+    ],
+    "plugins": ["transform-vue-jsx"],
+  }
+  
