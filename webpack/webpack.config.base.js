@@ -6,7 +6,6 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const {
     NODE_ENV,
-    DEPLOY_ENV,
 } = process.env;
 const devMode = NODE_ENV !== 'production';
 
@@ -33,7 +32,7 @@ module.exports = {
             oneOf: [{
                 resourceQuery: /module/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    devMode ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -46,7 +45,7 @@ module.exports = {
                 ],
             }, {
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    devMode ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
                     'postcss-loader',
                 ],
@@ -56,7 +55,7 @@ module.exports = {
             oneOf: [{
                 resourceQuery: /module/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    devMode ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -70,7 +69,7 @@ module.exports = {
                 ],
             }, {
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    devMode ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
                     'postcss-loader',
                     'sass-loader',
@@ -121,7 +120,6 @@ module.exports = {
             chunks: ['main'],
             // options
             NODE_ENV,
-            DEPLOY_ENV,
         }),
     ],
     // SplitChunksPlugin config
