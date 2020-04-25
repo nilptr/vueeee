@@ -18,44 +18,58 @@
   "bugs": {
     "url": "https://github.com/nilptr/vueeee/issues"
   },
+  "engines": {
+    "node": "^14.0.0"
+  },
   "homepage": "https://github.com/nilptr/vueeee#readme",
   "dependencies": {
-    "@babel/polyfill": "^7.7.0",
-    "axios": "^0.18.1",
-    "dayjs": "^1.8.17",
-    "vue": "^2.6.10",
-    "vue-router": "^3.1.3",
-    "vuex": "^3.1.2"
+    "axios": "^0.19.2",
+    "core-js": "^3.6.5",
+    "dayjs": "^1.8.25",
+    "regenerator-runtime": "^0.13.5",
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.6",
+    "vuex": "^3.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/plugin-syntax-jsx": "^7.2.0",
-    "@babel/preset-env": "^7.7.1",
-    "autoprefixer": "^9.7.1",
-    "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-syntax-jsx": "^7.8.3",
+    "@babel/preset-env": "^7.9.5",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.0.0",
+    "@vue/babel-preset-jsx": "^1.1.2",
+    "autoprefixer": "^9.7.6",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
     "css-loader": "^1.0.1",
-    "eslint": "^5.16.0",
+    "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^13.2.0",
     "eslint-plugin-html": "^5.0.5",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^5.2.3",
-    "file-loader": "^2.0.0",
+    "file-loader": "^6.0.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
-    "html-webpack-plugin": "^4.0.0-beta.11",
+    "html-webpack-plugin": "^4.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.7",
     "mini-css-extract-plugin": "^0.4.5",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.14.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.3.1",
-    "style-loader": "^0.23.1",
-    "vue-loader": "^15.7.2",
-    "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0",
+    "style-loader": "^1.2.0",
+    "vue-loader": "^15.9.1",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{vue,js}": "eslint"
   }
 }

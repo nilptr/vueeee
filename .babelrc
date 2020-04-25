@@ -2,8 +2,17 @@
 {
     "presets": [
         // for tree shaking
-        ["@babel/env", { "modules": false, "useBuiltIns": "entry" }]
+        ["@babel/env", {
+            // 不转换 modules , webpack4 可以自动 tree shaking
+            "modules": false,
+            // "entry" 把入口处的 import 'core-js' / import '@babel/polyfill' 根据 targets 替换成对应的 import
+            // "usage" 每个文件自动引入所需 polyfill ，靠 bundler 处理相同引用
+            // false  不自动引入 polyfill ，也不对 import 'core-js' / import '@babel/polyfill' 进行转换
+            "useBuiltIns": "entry",
+            // 指定 core-js 版本
+            "corejs": 3,
+        }],
+        "@vue/babel-preset-jsx",
     ],
-    "plugins": ["transform-vue-jsx"],
   }
   
