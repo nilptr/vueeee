@@ -1,16 +1,25 @@
 module.exports = {
-    root: true,
     env: {
         browser: true,
-        es6: true
+        es6: true,
     },
     extends: [
-        'airbnb-base',
         'plugin:vue/recommended',
+        'airbnb-base',
+    ],
+    globals: {
+        Atomics: 'readonly',
+        SharedArrayBuffer: 'readonly',
+    },
+    parserOptions: {
+        ecmaVersion: 2018,
+        sourceType: 'module',
+    },
+    plugins: [
+        'vue',
     ],
     rules: {
-        'no-plusplus': ["error", { "allowForLoopAfterthoughts": true }],
+        'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
         indent: ['error', 4, { SwitchCase: 1 }],
     },
-    globals: {},
 };
