@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/nilptr/vueeee#readme",
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "core-js": "^3.8.1",
     "dayjs": "^1.9.7",
     "regenerator-runtime": "^0.13.7",
